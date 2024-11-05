@@ -1,0 +1,48 @@
+Kepfeldolgozas cheatsheet:
+
+Színek -> szűrés
+Színmodell -> RGB, HSV
+H - színérték
+S - színtelítettség, szürkearány
+V - világosság
+
+Színes - 3D mátrix(szélesség, magasság, színcsatorna)
+Szürkehálós - 2D (szélesség, magasság)
+
+Szűrök:
+- képminőség javítás
+- élesítés, elmosás, homályosítás 
+
+Van:
+- box filter
+- gauss filter
+- median
+
+Box, gauss linearis 
+median nem linearis, statisztikai muveletet tartalmaz
+
+Box filter
+- szuro matrix -> kernel
+
+Gauss:
+- sigma a gauss gorbeélességét jelenti
+
+Ezek mind zajszuresre valok
+Gauss eleket szebben hagyja
+Box rossz minosegubb
+Median veletlenszeru zajokat tunteti el
+
+Lehet paros a kernel szelesseg/magassaga/dimenzioja?
+- box -> igen
+- gauss -> nem
+
+Logikai elemenkenti muveletek:
+bitwise and/or/not
+
+Küszöböléssel kapcs:
+
+
+sima | manualis | kezi trashold |
+automatikus (pl Otsu) -> globális
+
+adaptív -> lokális
