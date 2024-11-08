@@ -114,6 +114,7 @@ def edit_image_with_user_input():
     # Küszöbölés: Küszöbértékes bináris maszk létrehozása
     threshold_value = int(input("Adja meg a küszöbölési értéket (0-255): "))
     _, mask = cv2.threshold(cv2.cvtColor(image, cv2.COLOR_BGR2HSV)[:, :, 0], threshold_value, 255, cv2.THRESH_BINARY)
+    # _, thresholded_image = cv2.threshold(image, threshold_value, 255, cv2.THRESH_BINARY)
 
     # Hue, Saturation, Value
     hue = int(input("Adja meg a színezet változtatási értéket (-180 és 180 között): "))
@@ -241,6 +242,33 @@ def unsharp_masking(path):
     cv2.imshow("Élesített kép", sharpened)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
+
+# 16. Kép levágása (15 pixel)
+# s = 15
+# cropped_img = img[:, s:-s]
+
+# 17. Kép invertálása
+# img = cv2.imread("overexposed_10.jpg", cv2.IMREAD_GRAYSCALE)
+# inv = cv2.bitwise_not(img)
+
+# 18. Olvasd be a indigobunting.jpg képet színesben, térj át HSV színtérbe, állítsd a hátteret (a nem madár pontokat) feketére, az eredményképet mentsd el a neptunkod.png néven:
+# Kép beolvasása színes módban
+# img = cv2.imread("indigobunting.jpg", cv2.IMREAD_COLOR)
+
+# HSV színtérre váltás
+# hsv_img = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
+
+# Maszk létrehozása a nem madár (háttér) pontok feketére állításához
+# lower_bound = np.array([100, 50, 50])
+# upper_bound = np.array([140, 255, 255])
+# mask = cv2.inRange(hsv_img, lower_bound, upper_bound)
+
+# Háttér feketére állítása
+# hsv_img[mask == 0] = [0, 0, 0]
+
+# Eredmény mentése
+# result_img = cv2.cvtColor(hsv_img, cv2.COLOR_HSV2BGR)
+# cv2.imwrite("neptunkod.png", result_img)
 
 
 def main():
