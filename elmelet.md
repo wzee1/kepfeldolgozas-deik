@@ -64,18 +64,24 @@
 
 
 
-Plusz info:
-4. Custom Kernel használata (például élesítés)
+### Plusz info:
+Dilatáció: vastagítás
+Erózió: vékonyítás
+Nyitás: erózió aztán dilatáció 
+Zárás: dilatáció aztán erózió 
 
-Ha saját kernel mátrixot akarsz megadni, használhatod a cv2.filter2D függvényt. Például élesítéshez:
+Hisztogram: bal oldalon vannak, akkor sotet, jobb oldalon akkor vilagos, ha kozepen akkor kiegyensúlyozott
 
+Custom Kernel használata (például élesítés):
+- Ha saját kernel mátrixot akarsz megadni, használhatod a cv2.filter2D függvényt. Például élesítéshez:
+"""
 import numpy as np
 
-# 3x3-as élesítő kernel
+3x3-as élesítő kernel:
 kernel = np.array([[0, -1, 0],
                    [-1, 5, -1],
                    [0, -1, 0]])
 
-# Custom kernel alkalmazása
+Custom kernel alkalmazása:
 sharpened_image = cv2.filter2D(image, -1, kernel)
-
+"""
