@@ -61,3 +61,21 @@
 
 -  **Képkontraszt Növelése**: A kép kontrasztjának javítása a színek közötti eltérés fokozásával.
 -  **Élesítés**: A kép részleteinek kiemelése a pixel értékek növelésével, hogy a kép élesebbnek tűnjön.
+
+
+
+Plusz info:
+4. Custom Kernel használata (például élesítés)
+
+Ha saját kernel mátrixot akarsz megadni, használhatod a cv2.filter2D függvényt. Például élesítéshez:
+
+import numpy as np
+
+# 3x3-as élesítő kernel
+kernel = np.array([[0, -1, 0],
+                   [-1, 5, -1],
+                   [0, -1, 0]])
+
+# Custom kernel alkalmazása
+sharpened_image = cv2.filter2D(image, -1, kernel)
+
